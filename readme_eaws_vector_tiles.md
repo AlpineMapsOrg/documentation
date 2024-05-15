@@ -35,14 +35,14 @@ Name = Martin EAWS vector tiles
 In the main window on the left is the browser menu. There you can now click on “Vector Tiles” and then “Martin EAWS vector tiles” to display all the EAWS regions.
 
 # Parsing  a vector tile file with EAWS regions
-A downloaded mvt file contains several features, each feature representing one micro region.
+A downloaded EAWS mvt file contains the layer  "micro-regions". This layer conatins several features, each feature representing one micro region.
 Every feature (micro region) contains at least one property and one geometry, the latter one holding the vertices of the region's boundary polygon.
 Every Property has an id. There is at least one property with its id holding the name-string of the region (e.g. "FR-64"). Further properties can exist with ids (all string) "alt-id", "start_date" or "end_date".
 
-[1] https://regions.avalanches.org/index.html
-[2] https://github.com/mapbox/tippecanoe
-[3] https://docs.protomaps.com/pmtiles
-[4] https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/
-[5] https://ww.qgis.org
-[6] https://maplibre.org/martin/
-[7] https://github.com/mapbox/vector-tile-spec/blob/master/2.1/vector_tile.proto
+[1] https://regions.avalanches.org/index.html  
+[2] https://github.com/mapbox/tippecanoe  
+[3] https://docs.protomaps.com/pmtiles  
+[4] https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/  
+[5] https://ww.qgis.org  
+[6] https://maplibre.org/martin/  
+[7] https://github.com/mapbox/vector-tile-spec/blob/master/2.1/vector_tile.proto  
