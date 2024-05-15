@@ -15,7 +15,7 @@ EAWS regions are stored as a tileset in a PMTiles file [3] from which mapbox vec
 Usually tilesets are served by a server. A good option for serving vector tiles from a PMTiles file is Map Libre’s tile server Martin [7].
 
 ## Tileset for EAWS Regions
-Avalanche.org provides all EAWS Regions on its website [1]. All these regions are stored as GeoJson files. From this collection of GeoJson files a PMTiles file is created using the software tippercanoe [2]. This file is stored on the avalanche.org website as eaws-regions.pmtiles. This tileset allows 10 zoom levels. The vector tiles from the tile set also have a so-called extent that measure the resolution of the tile. This is usually 4096x4096. The eaws-regions.pmtiles contains all current regions and outdated regions .
+Avalanche.org provides all EAWS Regions on its website [1]. All these regions are stored as GeoJson files. From this collection of GeoJson files a PMTiles file is created using the software tippercanoe [2]. This file is stored on the avalanche.org website as eaws-regions.pmtiles. This tileset allows 10 zoom levels. The vector tiles from the tile set also have a so-called extent that measure the resolution of the tile. This is usually 4096x4096. The eaws-regions.pmtiles contains all current regions and outdated regions.
 
 # Retrieving vector tiles from a Tileset with Martin Server
 After downloading the file eaws-regions.pmtiles  from avalanches.org [1] and placing it in the same folder as the martin server one starts the Martin Server with .\martin.exe .\eaws-regions.pmtiles. It runs at localhost:3000. 
@@ -35,9 +35,9 @@ Name = Martin EAWS vector tiles
 In the main window on the left is the browser menu. There you can now click on “Vector Tiles” and then “Martin EAWS vector tiles” to display all the EAWS regions.
 
 # Parsing  a vector tile file with EAWS regions
-A downloaded EAWS mvt file contains the layer  "micro-regions". This layer conatins several features, each feature representing one micro region.
+A downloaded EAWS mvt file contains the three layers: "micro-regions", "micro-regions_elevation" and "outline"layer. The layer "micro-regions" contains several features, each feature representing one micro region.
 Every feature (micro region) contains at least one property and one geometry, the latter one holding the vertices of the region's boundary polygon.
-Every Property has an id. There is at least one property with its id holding the name-string of the region (e.g. "FR-64"). Further properties can exist with ids (all string) "alt-id", "start_date" or "end_date".
+Every property has an id. There is at least one property with its id holding the name-string of the region (e.g. "FR-64"). Further properties can exist with ids (all string) "alt-id", "start_date" or "end_date".
 
 [1] https://regions.avalanches.org/index.html  
 [2] https://github.com/mapbox/tippecanoe  
