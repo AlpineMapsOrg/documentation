@@ -1,0 +1,5 @@
+# Introduction
+![[application.png]]The goal of this project was to receive Points of Interests (POI) from a vector tile server, process this information and visualize them on the [AlpineMapsOrg application](https://github.com/AlpineMapsOrg/renderer). Initially we agreed on using [Basemap](https://basemap.at/standard-5/) as the vector tile provider but after encountering some problems, we switched to a custom tile server approach that we developed to fulfill our needs. 
+
+Currently 4 different types of POIs are being provided to the end user: mountain peaks, cities, mountain cottages and webcams, which are mostly sourced from the [OpenStreetMap](https://www.openstreetmap.org) dataset (see [[Vector Tile Types#Webcam|Vector Tile Types]] for exceptions). The project also implemented the means to filter the POIs using various attributes. Additionally the user can also click on each individual label. This causes the application to automatically detect the appropriate POI and display its attributes (like elevation, population, address, etc.) to the user.
+

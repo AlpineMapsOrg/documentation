@@ -1,0 +1,31 @@
+@media print {
+    .print > :is(.markdown-preview-view, .markdown-rendered) {
+        --h1-color: black;
+        --h2-color: black;
+        --h3-color: black;
+        --h4-color: black;
+        --h5-color: black;
+        --h6-color: black;
+        --em-color: black;
+        --strong-color: black;
+        --tag-color: black;
+        --tag-background: transparent;
+
+     }
+
+     body {
+  --text-normal: black;
+}
+}
+
+/*.markdown-embed-title { display:none; }*/
+.markdown-preview-view .markdown-embed { border:none; padding:0; margin:0; }
+.markdown-preview-view .markdown-embed-content { max-height: unset;}
+.markdown-preview-view .markdown-embed-content>:first-child { margin-top: 0; }
+.markdown-preview-view .markdown-embed-content>:last-child { margin-bottom: 0; }
+
+img[alt*="center"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

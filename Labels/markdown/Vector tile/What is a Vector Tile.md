@@ -1,0 +1,6 @@
+## What is a Vector Tile
+A vector tile is a file that contains geographic data that is encased in predetermined regions. The predetermined region is in most cases a square shape on a mercator projection. The data that is stored in a tile in most cases are points, lines or area data with general attributes like id, name, type or more specific attributes (depending on specific type) like elevation, population, owner, etc. In our case we are only interested in point data like peaks, cities, etc. 
+
+Vector tiles follow a specific x,y,z coordinate system to address each individual tile. The most common coordinate systems are from Google and Tile Map Service (TMS). The main difference between both systems is the location of the origin. While the x,y coordinates are indicating the precise location of the tile, the z coordinate provides the zoom level of the tile. On the highest zoom level (zoom 0) the whole world is captured with one single tile with the x,y coordinates 0,0. Each additional zoom level separates each tile into 4 sub tiles of the same size. \[[[References and Links#MapTiler|MapTiler]]\]
+
+While the AlpineMaps application can use both coordinate systems, the vector tile server that provides the map labels is using the TMS system.

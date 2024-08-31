@@ -1,0 +1,309 @@
+{
+  "vaultName": "Labels",
+  "lastExport": 1725127115428,
+  "pluginVersion": "1.8.01",
+  "validBodyClasses": "publish css-settings-manager show-ribbon theme-dark",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "General/Adding Label Feature Type.md",
+    "General/Future Improvements.md",
+    "General/How to start the Qt Application.md",
+    "General/Introduction.md",
+    "General/References and Links.md",
+    "Qt Application/Application index.md",
+    "Qt Application/Filter.md",
+    "Qt Application/Label Rendering.md",
+    "Qt Application/Overview - Alpine Maps.md",
+    "Qt Application/Picker.md",
+    "Qt Application/Vector Tile Parsing.md",
+    "Vector tile/Helpers/Debugging.md",
+    "Vector tile/Helpers/Helper Index.md",
+    "Vector tile/Helpers/Leaflet.md",
+    "Vector tile/Helpers/PostgreSQL tips.md",
+    "Vector tile/Helpers/Running Martin with local Postgres.md",
+    "Vector tile/Connecting and Working on TU Wien Server.md",
+    "Vector tile/Our Vector Tile Server.md",
+    "Vector tile/Vector Tile Index.md",
+    "Vector tile/Vector Tile Server.md",
+    "Vector tile/Vector Tile Server Benchmarks.md",
+    "Vector tile/Vector Tile Server Setup.md",
+    "Vector tile/Vector Tile Types.md",
+    "Vector tile/What is a Vector Tile.md",
+    "Index.md",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg"
+  ],
+  "mainDependencies": [
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg"
+  ],
+  "fileInfo": {
+    "General/Adding Label Feature Type.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 3283,
+      "exportedPath": "General/Adding Label Feature Type.html",
+      "dependencies": []
+    },
+    "General/Future Improvements.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1619,
+      "exportedPath": "General/Future Improvements.html",
+      "dependencies": []
+    },
+    "General/How to start the Qt Application.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 584,
+      "exportedPath": "General/How to start the Qt Application.html",
+      "dependencies": []
+    },
+    "General/Introduction.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1064,
+      "exportedPath": "General/Introduction.html",
+      "dependencies": []
+    },
+    "General/References and Links.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1940,
+      "exportedPath": "General/References and Links.html",
+      "dependencies": []
+    },
+    "Qt Application/Application index.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 161,
+      "exportedPath": "Qt Application/Application index.html",
+      "dependencies": []
+    },
+    "Qt Application/Filter.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 5773,
+      "exportedPath": "Qt Application/Filter.html",
+      "dependencies": []
+    },
+    "Qt Application/Label Rendering.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 16139,
+      "exportedPath": "Qt Application/Label Rendering.html",
+      "dependencies": []
+    },
+    "Qt Application/Overview - Alpine Maps.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 4043,
+      "exportedPath": "Qt Application/Overview - Alpine Maps.html",
+      "dependencies": []
+    },
+    "Qt Application/Picker.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 8738,
+      "exportedPath": "Qt Application/Picker.html",
+      "dependencies": []
+    },
+    "Qt Application/Vector Tile Parsing.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 4332,
+      "exportedPath": "Qt Application/Vector Tile Parsing.html",
+      "dependencies": []
+    },
+    "Vector tile/Helpers/Debugging.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 371,
+      "exportedPath": "Vector tile/Helpers/Debugging.html",
+      "dependencies": []
+    },
+    "Vector tile/Helpers/Helper Index.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 108,
+      "exportedPath": "Vector tile/Helpers/Helper Index.html",
+      "dependencies": []
+    },
+    "Vector tile/Helpers/Leaflet.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 423,
+      "exportedPath": "Vector tile/Helpers/Leaflet.html",
+      "dependencies": []
+    },
+    "Vector tile/Helpers/PostgreSQL tips.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1587,
+      "exportedPath": "Vector tile/Helpers/PostgreSQL tips.html",
+      "dependencies": []
+    },
+    "Vector tile/Helpers/Running Martin with local Postgres.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 259,
+      "exportedPath": "Vector tile/Helpers/Running Martin with local Postgres.html",
+      "dependencies": []
+    },
+    "Vector tile/Connecting and Working on TU Wien Server.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1048,
+      "exportedPath": "Vector tile/Connecting and Working on TU Wien Server.html",
+      "dependencies": []
+    },
+    "Vector tile/Our Vector Tile Server.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 4124,
+      "exportedPath": "Vector tile/Our Vector Tile Server.html",
+      "dependencies": []
+    },
+    "Vector tile/Vector Tile Index.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 258,
+      "exportedPath": "Vector tile/Vector Tile Index.html",
+      "dependencies": []
+    },
+    "Vector tile/Vector Tile Server.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 7156,
+      "exportedPath": "Vector tile/Vector Tile Server.html",
+      "dependencies": []
+    },
+    "Vector tile/Vector Tile Server Benchmarks.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 7506,
+      "exportedPath": "Vector tile/Vector Tile Server Benchmarks.html",
+      "dependencies": []
+    },
+    "Vector tile/Vector Tile Server Setup.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 3244,
+      "exportedPath": "Vector tile/Vector Tile Server Setup.html",
+      "dependencies": []
+    },
+    "Vector tile/Vector Tile Types.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 10422,
+      "exportedPath": "Vector tile/Vector Tile Types.html",
+      "dependencies": []
+    },
+    "Vector tile/What is a Vector Tile.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 1255,
+      "exportedPath": "Vector tile/What is a Vector Tile.html",
+      "dependencies": []
+    },
+    "Index.md": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 647,
+      "exportedPath": "Index.html",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 317,
+      "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1725127115428,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    }
+  }
+}

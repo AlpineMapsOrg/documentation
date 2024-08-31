@@ -1,0 +1,8 @@
+# Future Improvements
+During the development of the labels project a couple of possible future improvements have been noticed. Since those improvements mostly fell outside the initially outlined project requirements, those enhancements were left for future contributions.
+## Signed Distance Field
+The font textures we are currently using are hard set to be only available in one font size. Most of the time just scaling those textures to be slightly smaller in the shader is not too much of a problem. Nevertheless by using Signed Distance Fields this problem can be completely solved. In order to generate such distance fields the following repository could be used: https://github.com/Chlumsky/msdf-atlas-gen
+## Label Placement
+Currently the labels are placed at fixed positions and heights above the terrain. This could easily lead to problems if multiple labels are close to each other. Nevertheless it is possible to place the labels in a way that no(or minimal) overlapping between labels occur.
+## Mountain Ranges
+During the development we encountered the design problem of how Mountain ranges should be displayed in our application. The problem with mountain ranges is that we have no singular point were a Label should be placed, but a whole region. On 2D maps mountain ranges are mostly visualized with a different font and color and the text of the label is warped so that it follows the mountain range. Doing something similar on a 3D map such as AlpineMaps seems to be a tricky problem that needs to be further discussed and researched. In our current application no mountain ranges are visualized at all.

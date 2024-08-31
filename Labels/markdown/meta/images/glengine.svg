@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="314px" preserveAspectRatio="none" style="width:1593px;height:314px;" version="1.1" viewBox="0 0 1593 314" width="1593px" zoomAndPan="magnify"><defs><filter height="300%" id="ftpuk0yhfselx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[77b6d155e8173f78ea2c3c095ee800ae]
+cluster gl_engine--><polygon fill="#FFFFFF" filter="url(#ftpuk0yhfselx)" points="22,24,103,24,110,46.2969,1571,46.2969,1571,302,22,302,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="110" y1="46.2969" y2="46.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="75" x="26" y="38.9951">gl_engine</text><!--MD5=[ccfc617814a2bd6f1491a9d05ce79e70]
+class gl_engine.MapLabelManager--><rect fill="#FEFECE" filter="url(#ftpuk0yhfselx)" height="227.2656" id="gl_engine.MapLabelManager" style="stroke: #A80036; stroke-width: 1.5;" width="1165" x="390.5" y="59"/><ellipse cx="911.75" cy="75" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M914.7188,80.6406 Q914.1406,80.9375 913.5,81.0781 Q912.8594,81.2344 912.1563,81.2344 Q909.6563,81.2344 908.3281,79.5938 Q907.0156,77.9375 907.0156,74.8125 Q907.0156,71.6875 908.3281,70.0313 Q909.6563,68.375 912.1563,68.375 Q912.8594,68.375 913.5,68.5313 Q914.1563,68.6875 914.7188,68.9844 L914.7188,71.7031 Q914.0938,71.125 913.5,70.8594 Q912.9063,70.5781 912.2813,70.5781 Q910.9375,70.5781 910.25,71.6563 Q909.5625,72.7188 909.5625,74.8125 Q909.5625,76.9063 910.25,77.9844 Q910.9375,79.0469 912.2813,79.0469 Q912.9063,79.0469 913.5,78.7813 Q914.0938,78.5 914.7188,77.9219 L914.7188,80.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="114" x="932.25" y="79.1543">MapLabelManager</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="391.5" x2="1554.5" y1="91" y2="91"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="99"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="308" x="410.5" y="105.2104">m_mapLabelFactory : nucleus::maplabel::LabelFactory</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="111.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="138" x="410.5" y="118.0151">m_indices_count : size_t</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="124.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="292" x="410.5" y="130.8198">m_index_buffer : std::unique_ptr&lt;QOpenGLBuffer&gt;</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="137.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="244" x="410.5" y="143.6245">m_font_texture : std::unique_ptr&lt;Texture&gt;</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="150.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="245" x="410.5" y="156.4292">m_icon_texture : std::unique_ptr&lt;Texture&gt;</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="163.0234"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="535" x="410.5" y="169.2339">m_gpu_tiles : std::unordered_map&lt;tile::Id, std::shared_ptr&lt;GPUVectorTile&gt;, tile::Id::Hasher&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="391.5" x2="1554.5" y1="175.8281" y2="175.8281"/><ellipse cx="401.5" cy="186.8281" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="202" x="410.5" y="190.0386">MapLabelManager(QObject* parent)</text><ellipse cx="401.5" cy="199.6328" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="1099" x="410.5" y="202.8433">draw(Framebuffer* gbuffer, ShaderProgram* shader_program, const nucleus::camera::Definition&amp; camera, const nucleus::tile_scheduler::DrawListGenerator::TileSet draw_tiles) : void {query}</text><ellipse cx="401.5" cy="212.4375" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="1139" x="410.5" y="215.6479">draw_picker(Framebuffer* gbuffer, ShaderProgram* shader_program, const nucleus::camera::Definition&amp; camera, const nucleus::tile_scheduler::DrawListGenerator::TileSet draw_tiles) : void {query}</text><ellipse cx="401.5" cy="225.2422" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="410.5" y="228.4526">init() : void</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="235.0469"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="226" x="410.5" y="241.2573">remove_tile(const tile::Id&amp; tile_id) : void</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="247.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="140" x="410.5" y="254.062">renew_font_atlas() : void</text><ellipse cx="401.5" cy="263.6563" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="595" x="410.5" y="266.8667">update_labels(const TiledVectorTile&amp; visible_features, const std::vector&lt;tile::Id&gt;&amp; removed_tiles) : void</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="398.5" y="273.4609"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="380" x="410.5" y="279.6714">upload_to_gpu(const tile::Id&amp; id, const VectorTile&amp; features) : void</text><!--MD5=[961eeb96e0fd1ace56dbeeaf7feefe96]
+class gl_engine.GPUVectorTile--><rect fill="#FEFECE" filter="url(#ftpuk0yhfselx)" height="99.2188" id="gl_engine.GPUVectorTile" style="stroke: #A80036; stroke-width: 1.5;" width="318" x="38" y="123"/><ellipse cx="148.75" cy="139" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M151.7188,144.6406 Q151.1406,144.9375 150.5,145.0781 Q149.8594,145.2344 149.1563,145.2344 Q146.6563,145.2344 145.3281,143.5938 Q144.0156,141.9375 144.0156,138.8125 Q144.0156,135.6875 145.3281,134.0313 Q146.6563,132.375 149.1563,132.375 Q149.8594,132.375 150.5,132.5313 Q151.1563,132.6875 151.7188,132.9844 L151.7188,135.7031 Q151.0938,135.125 150.5,134.8594 Q149.9063,134.5781 149.2813,134.5781 Q147.9375,134.5781 147.25,135.6563 Q146.5625,136.7188 146.5625,138.8125 Q146.5625,140.9063 147.25,141.9844 Q147.9375,143.0469 149.2813,143.0469 Q149.9063,143.0469 150.5,142.7813 Q151.0938,142.5 151.7188,141.9219 L151.7188,144.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="88" x="169.25" y="143.1543">GPUVectorTile</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="355" y1="155" y2="155"/><ellipse cx="49" cy="166" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="129" x="58" y="169.2104">instance_count : size_t</text><ellipse cx="49" cy="178.8047" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="280" x="58" y="182.0151">vertex_buffer : std::unique_ptr&lt;QOpenGLBuffer&gt;</text><ellipse cx="49" cy="191.6094" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="292" x="58" y="194.8198">vao : std::unique_ptr&lt;QOpenGLVertexArrayObject&gt;</text><ellipse cx="49" cy="204.4141" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="58" y="207.6245">id : tile::Id</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="355" y1="214.2188" y2="214.2188"/><!--MD5=[7d216b287921d5dda8a4914e9b7ef9b9]
+@startuml
+
+
+
+
+
+
+namespace gl_engine {
+	class MapLabelManager {
+		+MapLabelManager(QObject* parent)
+		-m_mapLabelFactory : nucleus::maplabel::LabelFactory
+		-m_indices_count : size_t
+		-m_index_buffer : std::unique_ptr<QOpenGLBuffer>
+		-m_font_texture : std::unique_ptr<Texture>
+		-m_icon_texture : std::unique_ptr<Texture>
+		-m_gpu_tiles : std::unordered_map<tile::Id, std::shared_ptr<GPUVectorTile>, tile::Id::Hasher>
+		+draw(Framebuffer* gbuffer, ShaderProgram* shader_program, const nucleus::camera::Definition& camera, const nucleus::tile_scheduler::DrawListGenerator::TileSet draw_tiles) : void {query}
+		+draw_picker(Framebuffer* gbuffer, ShaderProgram* shader_program, const nucleus::camera::Definition& camera, const nucleus::tile_scheduler::DrawListGenerator::TileSet draw_tiles) : void {query}
+		+init() : void
+		-remove_tile(const tile::Id& tile_id) : void
+		-renew_font_atlas() : void
+		+update_labels(const TiledVectorTile& visible_features, const std::vector<tile::Id>& removed_tiles) : void
+		-upload_to_gpu(const tile::Id& id, const VectorTile& features) : void
+	}
+
+	class GPUVectorTile {
+		+instance_count : size_t
+		+vertex_buffer : std::unique_ptr<QOpenGLBuffer>
+		+vao : std::unique_ptr<QOpenGLVertexArrayObject>
+		+id : tile::Id
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 11:22:07 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.4+7-Ubuntu-1ubuntu222.04
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
