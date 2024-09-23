@@ -10,12 +10,7 @@ ssh <youruser>@osm.cg.tuwien.ac.at
 
 **Accessing psql database**
 ```
-sudo -umartin psql -Umartin --password <THEPASSWORD>
-```
-
-**psql dump for SQL backups**
-```
-sudo -umartin pg_dump -Umartin --password <THEPASSWORD> > gis_dump.sql
+sudo -umartin psql -Umartin gis
 ```
 
 **Copy files from local to server**
@@ -26,7 +21,7 @@ scp *.sql <youruser>@osm.cg.tuwien.ac.at:/usr/people/<youruser>/
 
 **Apply SQL files to server**
 ```
-sudo -umartin psql -Umartin --password <THEPASSWORD> -f somesqlfile.sql
+sudo -umartin psql -Umartin gis -f somesqlfile.sql
 ```
 
 **Updating the Martin server (clears cache):**

@@ -27,6 +27,18 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "meta/Combined document.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "411f7afd34a1ed07",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "meta/Combined document.baked.md",
                 "mode": "source",
                 "source": false
@@ -58,7 +70,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -87,7 +99,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "pbf",
+                "query": "pg_dump",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -188,20 +200,26 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "26de53ef7b4df93e",
+  "active": "411f7afd34a1ed07",
   "lastOpenFiles": [
-    "meta/Combined document.md",
+    "meta/outline for baked.md",
     "meta/Combined document.baked.md",
+    "meta/Combined document.md",
+    "Vector tile/Connecting and Working on TU Wien Server.md",
+    "Vector tile/Vector Tile Server Setup.md",
+    "Vector tile/Helpers/Debugging.md",
+    "Vector tile/Helpers/Running Martin with local Postgres.md",
+    "Vector tile/Helpers/PostgreSQL tips.md",
+    "General/Adding Label Feature Type.md",
+    "Vector tile/Vector Tile Types.md",
+    "Vector tile/External Webcams.md",
+    "broken links output.md",
+    "empty files.md",
     "Index.md",
     "Vector tile/What is a Vector Tile.md",
-    "Vector tile/Vector Tile Types.md",
-    "Vector tile/Vector Tile Server Setup.md",
     "Vector tile/Vector Tile Server Benchmarks.md",
     "Vector tile/Vector Tile Index.md",
     "Vector tile/Our Vector Tile Server.md",
-    "Vector tile/Connecting and Working on TU Wien Server.md",
-    "Vector tile/Helpers/Running Martin with local Postgres.md",
-    "Vector tile/Helpers/PostgreSQL tips.md",
     "Vector tile/Helpers/Leaflet.md",
     "Vector tile/Helpers/Helper Index.md",
     "Qt Application/Vector Tile Parsing.md",
@@ -210,12 +228,6 @@
     "Qt Application/Filter.md",
     "Qt Application/Application index.md",
     "General/Introduction.md",
-    "General/How to start the Qt Application.md",
-    "General/Adding Label Feature Type.md",
-    "Qt Application/Overview - Alpine Maps.md",
-    "General/References and Links.md",
-    "Vector tile/Vector Tile Server.md",
-    "orphaned files output.md",
     "README.txt",
     "meta/images/nucleus_controler.png",
     "meta/images/vectortile.svg",

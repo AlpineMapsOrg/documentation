@@ -3,7 +3,7 @@
 
 Author / Developer: Lucas Dworschak (01225883)
 TU Wien
-Last Update: 31.8.2024
+Last Update: 23.9.2024
 
 Documentation compatible with the following GitHub commit:
 [4f89ce2279f3e616ec16d751fd860b5cafec9449](https://github.com/AlpineMapsOrg/renderer/commit/4f89ce2279f3e616ec16d751fd860b5cafec9449)
@@ -435,12 +435,7 @@ ssh <youruser>@osm.cg.tuwien.ac.at
 
 **Accessing psql database**
 ```
-sudo -umartin psql -Umartin --password <THEPASSWORD>
-```
-
-**psql dump for SQL backups**
-```
-sudo -umartin pg_dump -Umartin --password <THEPASSWORD> > gis_dump.sql
+sudo -umartin psql -Umartin gis
 ```
 
 **Copy files from local to server**
@@ -451,7 +446,7 @@ scp *.sql <youruser>@osm.cg.tuwien.ac.at:/usr/people/<youruser>/
 
 **Apply SQL files to server**
 ```
-sudo -umartin psql -Umartin --password <THEPASSWORD> -f somesqlfile.sql
+sudo -umartin psql -Umartin gis -f somesqlfile.sql
 ```
 
 **Updating the Martin server (clears cache):**
@@ -881,7 +876,7 @@ https://github.com/protomaps/PMTiles
 
 
 ## STB repository
-This repository allows us to render .ttf files to textures
+This repository allows us to render ttf files to textures
 https://github.com/nothings/stb
 
 
