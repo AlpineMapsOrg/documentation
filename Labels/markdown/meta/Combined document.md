@@ -1,9 +1,9 @@
 # Documentation - Alpine Maps Labels
 
 
-Author / Developer: Lucas Dworschak (01225883)
+Author / Developer: Lucas Dworschak (01225883), Adam Celarek
 TU Wien
-Last Update: 23.9.2024
+Last Update: 07.07.2025
 
 Documentation compatible with the following GitHub commit:
 [4f89ce2279f3e616ec16d751fd860b5cafec9449](https://github.com/AlpineMapsOrg/renderer/commit/4f89ce2279f3e616ec16d751fd860b5cafec9449)

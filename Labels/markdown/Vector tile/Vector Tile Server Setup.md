@@ -1,5 +1,7 @@
 ## Vector Tile Server Setup
 The following explains the setup process from nothing to a working development environment for a vector tile server using [Martin](https://github.com/maplibre/martin). While this document can be viewed on its own it should ultimately be used as documentation to better understand how the https://github.com/AlpineMapsOrg/martin_config repository works. We therefore sometimes mention files that are present in this repository which can also help you with your own setup of your development environment (e.g. update\_docker.sh)
+
+The setup (w/o martin) was automated in the [[https://github.com/AlpineMapsOrg/martin_config/blob/main/setup_postgres.sh|setup_postgres.sh]] script.
 ### 1. local install
 1. install martin (either by using docker or downloading the latest binaries)
 https://maplibre.org/martin/installation.html
@@ -42,6 +44,7 @@ GRANT ALL PRIVILEGES ON DATABASE alpinemaps TO alpine;
 
 # switching to alpinemaps database
 \c alpinemaps
+ALTER SCHEMA public OWNER TO alpine;
 CREATE EXTENSION postgis;
 CREATE EXTENSION hstore;
 
@@ -67,7 +70,7 @@ https://download.geofabrik.de/europe/austria-latest.osm.pbf
 
 **By using the following command we extract the data from the .pbf file into our newly created database:**
 ```
-osm2pgsql -d alpinemaps -U alpine --password --hstore austria-latest.osm.pbf
+osm2pgsql -d alpinemaps -U alpine -H localhost --password --hstore austria-latest.osm.pbf
 ```
 
 **Additional details about --hstore flag:**

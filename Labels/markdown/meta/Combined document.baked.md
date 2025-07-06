@@ -1,9 +1,9 @@
 # Documentation - Alpine Maps Labels
 
 
-Author / Developer: Lucas Dworschak (01225883)
+Author / Developer: Lucas Dworschak (01225883), Adam Celarek
 TU Wien
-Last Update: 23.9.2024
+Last Update: 07.07.2025
 
 Documentation compatible with the following GitHub commit:
 [4f89ce2279f3e616ec16d751fd860b5cafec9449](https://github.com/AlpineMapsOrg/renderer/commit/4f89ce2279f3e616ec16d751fd860b5cafec9449)
@@ -36,16 +36,16 @@ Documentation compatible with the following GitHub commit:
 <br>
 
 # Introduction
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/application.png)The goal of this project was to receive Points of Interests (POI) from a vector tile server, process this information and visualize them on the [AlpineMapsOrg application](https://github.com/AlpineMapsOrg/renderer). Initially we agreed on using [Basemap](https://basemap.at/standard-5/) as the vector tile provider but after encountering some problems, we switched to a custom tile server approach that we developed to fulfill our needs. 
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/application.png)The goal of this project was to receive Points of Interests (POI) from a vector tile server, process this information and visualize them on the [AlpineMapsOrg application](https://github.com/AlpineMapsOrg/renderer). Initially we agreed on using [Basemap](https://basemap.at/standard-5/) as the vector tile provider but after encountering some problems, we switched to a custom tile server approach that we developed to fulfill our needs. 
 
-Currently 4 different types of POIs are being provided to the end user: mountain peaks, cities, mountain cottages and webcams, which are mostly sourced from the [OpenStreetMap](https://www.openstreetmap.org) dataset (see [[#Webcam]] for exceptions). The project also implemented the means to filter the POIs using various attributes. Additionally the user can also click on each individual label. This causes the application to automatically detect the appropriate POI and display its attributes (like elevation, population, address, etc.) to the user.
+Currently 4 different types of POIs are being provided to the end user: mountain peaks, cities, mountain cottages and webcams, which are mostly sourced from the [OpenStreetMap](https://www.openstreetmap.org) dataset (see Vector Tile Types for exceptions). The project also implemented the means to filter the POIs using various attributes. Additionally the user can also click on each individual label. This causes the application to automatically detect the appropriate POI and display its attributes (like elevation, population, address, etc.) to the user.
 
 
 # Vector Tile
 ## What is a Vector Tile
 A vector tile is a file that contains geographic data that is encased in predetermined regions. The predetermined region is in most cases a square shape on a mercator projection. The data that is stored in a tile in most cases are points, lines or area data with general attributes like id, name, type or more specific attributes (depending on specific type) like elevation, population, owner, etc. In our case we are only interested in point data like peaks, cities, etc. 
 
-Vector tiles follow a specific x,y,z coordinate system to address each individual tile. The most common coordinate systems are from Google and Tile Map Service (TMS). The main difference between both systems is the location of the origin. While the x,y coordinates are indicating the precise location of the tile, the z coordinate provides the zoom level of the tile. On the highest zoom level (zoom 0) the whole world is captured with one single tile with the x,y coordinates 0,0. Each additional zoom level separates each tile into 4 sub tiles of the same size. \[[[#MapTiler]]\]
+Vector tiles follow a specific x,y,z coordinate system to address each individual tile. The most common coordinate systems are from Google and Tile Map Service (TMS). The main difference between both systems is the location of the origin. While the x,y coordinates are indicating the precise location of the tile, the z coordinate provides the zoom level of the tile. On the highest zoom level (zoom 0) the whole world is captured with one single tile with the x,y coordinates 0,0. Each additional zoom level separates each tile into 4 sub tiles of the same size. \[MapTiler\]
 
 While the AlpineMaps application can use both coordinate systems, the vector tile server that provides the map labels is using the TMS system.
 
@@ -168,6 +168,8 @@ postgres:
 
 ## Vector Tile Server Setup
 The following explains the setup process from nothing to a working development environment for a vector tile server using [Martin](https://github.com/maplibre/martin). While this document can be viewed on its own it should ultimately be used as documentation to better understand how the https://github.com/AlpineMapsOrg/martin_config repository works. We therefore sometimes mention files that are present in this repository which can also help you with your own setup of your development environment (e.g. update\_docker.sh)
+
+The setup (w/o martin) was automated in the [[https://github.com/AlpineMapsOrg/martin_config/blob/main/setup_postgres.sh|setup_postgres.sh]] script.
 ### 1. local install
 1. install martin (either by using docker or downloading the latest binaries)
 https://maplibre.org/martin/installation.html
@@ -210,6 +212,7 @@ GRANT ALL PRIVILEGES ON DATABASE alpinemaps TO alpine;
 
 # switching to alpinemaps database
 \c alpinemaps
+ALTER SCHEMA public OWNER TO alpine;
 CREATE EXTENSION postgis;
 CREATE EXTENSION hstore;
 
@@ -235,13 +238,13 @@ https://download.geofabrik.de/europe/austria-latest.osm.pbf
 
 **By using the following command we extract the data from the .pbf file into our newly created database:**
 ```
-osm2pgsql -d alpinemaps -U alpine --password --hstore austria-latest.osm.pbf
+osm2pgsql -d alpinemaps -U alpine -H localhost --password --hstore austria-latest.osm.pbf
 ```
 
 **Additional details about --hstore flag:**
 The hstore flag stores attributes as key/value pairs in one single database field. If this flag is not set only the necessary fields (e.g. position/type/id/name will be written to the database)
 
-**More detailed info about osm2pgsql can be found on the following link:** \[[[#PostGIS 2014]]\]
+**More detailed info about osm2pgsql can be found on the following link:** \[PostGIS 2014\]
 
 https://subscription.packtpub.com/book/programming/9781849518666/1/ch01lvl1sec15/importing-openstreetmap-data-with-the-osm2pgsql-command
 
@@ -262,13 +265,13 @@ In order to generate vector tiles for one type we are using a multiple step prep
 	3. if no features with a bigger importance metric is found set importance to 1
 	4. sort materialized view by importance and importance metric
 4. create SQL indices for the coordinates for a quicker lookup of subsequent queries
-5. create a [[#Functions|Martin vector tile function]] that provides the 4 first entries of the view we just created, limited by the constraints of the vector tile coordinates
+5. create a Martin vector tile function that provides the 4 first entries of the view we just created, limited by the constraints of the vector tile coordinates
 
 The search radius is 1/3 the size of a tile with zoom level 8. Note for speeding up of the preprocessing procedure it is possible to define other zoom levels for this. In order to calculate this we created a utility table in the *1\_utilities.sql* file where all distances from zoom levels 5 to 25 are calculated.
 
 The tile function is defined that it only provides values starting with zoom level 10 (set in the config.yaml file of the martin server). Starting from zoom level 22 all features within this tile are served without any limitations of amount.
 
-We are using materialized views because this allows us to define indices on certain fields of those views. By using indices we improve the speed of queries significantly. This can be observed in the [[#Vector Tile Server Benchmarks]] section.
+We are using materialized views because this allows us to define indices on certain fields of those views. By using indices we improve the speed of queries significantly. This can be observed in the benchmark section.
 
 ### Combining each feature
 Martin would already allow us to combine each individual feature type into one vector tile by combining the features with commas in the request URL.
@@ -284,7 +287,7 @@ After discussing this we came to the conclusion that combining the types using c
 
 
 ## Vector Tile Types
-Currently 4 different types of POIs are being provided to the end user: mountain peaks, cities, mountain cottages and webcams. As of the moment of this writing the tile server contains 15.702 peaks, 21.614 cities, 1.687 webcams, 418 cottages. All POIs are located within (or near) Austria and were preprocessed from the [OpenStreetMap](https://www.openstreetmap.org) dataset (with a partial exception for the webcam data (see [[#Webcam]] for more details about this exception)). 
+Currently 4 different types of POIs are being provided to the end user: mountain peaks, cities, mountain cottages and webcams. As of the moment of this writing the tile server contains 15.702 peaks, 21.614 cities, 1.687 webcams, 418 cottages. All POIs are located within (or near) Austria and were preprocessed from the [OpenStreetMap](https://www.openstreetmap.org) dataset (with a partial exception for the webcam data (see Webcam type for more details about this exception)). 
 ### General Attributes
 All the different types contain general attributes that are shared among them. The shared attributes are the OSM identifier, a name, longitude, latitude, importance and importance metric.
 While the former attributes are self-explanatory let us explain the importance metric and the importance attributes with a bit more detail.
@@ -590,7 +593,7 @@ After the data has been parsed, we iterate over all possible layer names and sub
 
 Those parsing methods translate the Mapbox c++ classes into the correct *FeatureTXT* subtype (e.g. *FeatureTXTPeak*). The parsed FeatureTXT structs are finally stored into an std::set which is finally returned back to the caller of the to\_vector\_tile function.
 
-During the parsing of the features the VectorTileManager additionally passes over the names of each individual feature and accrues a set of each character that appears. This set is later used to trigger renewals of the font texture. See [[#nucleus map _label Charset|Charset]] for more information.
+During the parsing of the features the VectorTileManager additionally passes over the names of each individual feature and accrues a set of each character that appears. This set is later used to trigger renewals of the font texture. See Charset for more information.
 ### nucleus::vector\_tiles::FeatureTXT
 FeatureTXT and derived FeatureTXTPeak, FeatureTXTCity, etc. types are structs that hold all the relevant data that our application needs about a specific feature.  Each struct possesses parsing methods that translate the data stored in the Mapbox classes to the correct attributes. The attributes are stored in the struct in formats that are representative of the actual data (e.g. elevation is stored as integers, while names are stored as a QString).
 
@@ -602,7 +605,7 @@ Another method that each FeatureTXT struct possesses is the label\_text method. 
 
 Finally each struct also has a get\_feature\_data method. This method is used by the label picker to encapsulate what data is actually provided to the user once a label is picked (for example attributes that are only used internally are not stored). The data is essentially returned as key/value pairs. Additionally the method allows us to merge fields like address together into a more human-readable format.
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/vectortile.svg)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/vectortile.svg)
 ## Label Rendering
 ### gl\_engine::MapLabelManager
 The MapLabelManager is part of the gl\_engine namespace and is created by the Window class. The init() method initializes the manager. This method mainly creates the various OpenGL buffers it needs to function. One of these buffers is the icon texture buffer, another is the font texture buffer. The creation of both of those textures is handled by the *nucleus::maplabel::LabelFactory*. Lastly it also creates the index buffer.  Since every single character is rendered onto a quad we are using instance drawing and our index buffer contains only indices for one quad.
@@ -619,7 +622,7 @@ The draw\_picker method works in a similar fashion to the draw method. The main 
 
 Both the draw method and the draw\_picker method is called by the *Window paint()* method. The draw\_picker method is drawn into a picker FrameBuffer, while the draw method draws into the decoration FrameBuffer. The decoration FrameBuffer is later copied into the FrameBuffer that is actually passed to the display, while the picker FrameBuffer is only used to read specific pixels on the CPU once a click event happens.
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/glengine.svg)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/glengine.svg)
 ### nucleus::map\_label::LabelFactory
 The LabelFactory class manages all the parts that are necessary to create labels for a rendering engine without being tied to a specific rendering approach (like OpenGL). The main parts are creation of the icon texture, creation of VertexData structs from FeatureTXT objects and calling the FontRenderer to create the font texture.
 
@@ -627,7 +630,7 @@ At the initialization stage, that is triggered by the MapLabelManager, the FontR
 
 Simultaneously the label\_icons() method is also called at the initialization. This method loads and merges all the individual icons of the feature types into one texture element. 
 
-The renew\_font\_atlas() method is triggered at every update\_labels() call from the MapLabelManager. It checks (by using the [[#nucleus map _label Charset|Charset]] class) whether or not new chars have to be rendered by the FontRenderer and generates new textures and font\_data if necessary. 
+The renew\_font\_atlas() method is triggered at every update\_labels() call from the MapLabelManager. It checks (by using the Charset class) whether or not new chars have to be rendered by the FontRenderer and generates new textures and font\_data if necessary. 
 
 The create\_label() method is used to create the VertexData objects that are later used directly by the Shader. Each individual character in each visible feature has exactly one VertexData object. This object is created by first converting the text to UTF-16 characters, where a character is encoded using 16 bits. Initially a create\_text\_meta() function is called this iterates over each character in a label and calculates the leading/kerning values that are needed for all characters in combination with their neighbors. Additionally it also calculates the total width of the label and uses this information to center it. 
 The create\_label method continues by iterating over all the characters again. In this iteration the final vertex positions are calculated. Each character creates a VertexData struct where the data necessary for the shader is stored. 
@@ -642,7 +645,7 @@ This VertexData contains:
 
 The create\_label method furthermore creates one additional VertexData object to store the icon for each label. All the created VertexData are collected in a vector which is later returned to the MapLabelManager for upload to the GPU.
 ### STB\_Truetype
-[STB](https://github.com/nothings/stb) are single file c++ libraries in the public domain. Each header file can be used separately to accomplish a task. In our application we are using the [stb_truetype.h](https://github.com/nothings/stb/blob/master/stb_truetype.h) file in order to render .ttf font files into a font atlas. A font atlas here is a texture image with each (previously selected) character rendered into certain positions. Those positions are then stored by us and can later be used to render a single character onto a quad. This kind of font rendering algorithm is a similar approach as explained in the book "Learn OpenGL" by De Vries \[[[#Vries 2020]]\].
+[STB](https://github.com/nothings/stb) are single file c++ libraries in the public domain. Each header file can be used separately to accomplish a task. In our application we are using the [stb_truetype.h](https://github.com/nothings/stb/blob/master/stb_truetype.h) file in order to render .ttf font files into a font atlas. A font atlas here is a texture image with each (previously selected) character rendered into certain positions. Those positions are then stored by us and can later be used to render a single character onto a quad. This kind of font rendering algorithm is a similar approach as explained in the book "Learn OpenGL" by De Vries \[Vries 2020\].
 ### nucleus::map\_label::FontRenderer
 The FontRenderer uses the aforementioned [stb_truetype](https://github.com/nothings/stb/blob/master/stb_truetype.h) to create the font textures and corresponding metadata for each created character. The font metadata holds UV regions, character sizes and other values needed like leading/kerning and ascender/descender (e.g. k and g) placement. 
 
@@ -662,7 +665,7 @@ Once the LabelFactory finds this discrepancy it calls the char\_diff() method of
 
 In conclusion, the Charset class is the central point that makes it possible that the application doesn't have to worry, that through some update on the Vector Tile Server some new feature contain special characters that weren't previously present in the application, and is able to render them without any problems.
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/map_label_rendering.svg)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/map_label_rendering.svg)
 ### Shader
 The shaders for the labels can be found in the *gl\_engine/shaders* directory and are called labels.vert, labels.frag and labels\_picker.frag.
 
@@ -719,7 +722,7 @@ In order to make the Modelbinding work a Q\_PROPERTY in the app/TerrainRendererI
 In our specific example we created the nucleus::map\_label::FilterDefinitions struct. This struct is created in the TerrainRendererItem as a class variable and additionally set as a Q\_PROPERTY. Additionally the struct needs to have the Q\_GADGET macro applied and additional Q\_PROPERTY's specified for its own member variables. 
 
 With those preparations done we can finally create the FilterWindow.qml file. This QML file essentially will hold the GUI elements that the user can set for himself:
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/filter.png)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/filter.png)
 The FilterWindow.qml is attached to the Main.qml file. It can be shown by either using the F7 key or by clicking on the bottom left most button and selecting the filter icon from the resulting submenu.
 
 The filter page itself consists of CheckGroup elements. These elements are the checkboxes seen next to the feature type names. If this checkbox is not ticked it collapses all the elements within it. This was a great element to include here, since if (for example) a user doesn't want to show any peaks, he also would not want to see any filter options that are related to peaks like elevation or the checkboxes regarding crosses or registers. Once the checkbox is ticked again those options are naturally shown again. 
@@ -738,11 +741,11 @@ The filter method itself (regardless if called by update\_filter or update\_quad
 
 After the filtering is done by either of those two specified entry points, the filter\_finished signal is emitted which propagates all the changed tiles to the MapLabelManager for further processing and rendering. Specifically the signal contains a reference to the m\_visible\_features object for all the tiles that need to be updated, and an additional list of removed tile ids (to indicate that those tiles should be deleted from GPU memory).
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/map_label_filter.svg)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/map_label_filter.svg)
 ## Picker
 The next section describes the label picker. With this feature it is possible to click on the window and evaluate what exactly was at the location of this click. If the user clicked on a label the PickerManager automatically locates the exact feature that was selected and displays additional information about this feature to the user using GUI elements. Overall the picker was designed in a way that it not only supports the detection of which label was clicked on, but could also be easily expanded to work with any other elements.
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/picker-detail.png)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/picker-detail.png)
 
 ### Pickerbuffer
 In order to evaluate what the user clicked on, we need the means to read what is written on the screen. Unfortunately simply reading the main FrameBuffer (what is shown on the screen to the user) doesn't really help us. We therefore created a second FrameBuffer called pickerbuffer. With this FrameBuffer we can store and later retrieve numerical values depending on the position. The value we are storing in the FrameBuffer is an 8 bit value for the type that is stored followed by a 24 bit id for the specific feature (= 32-bit numbers per pixel or 4 x 8-bit RGBA values). 
@@ -768,7 +771,7 @@ Finally we are able to evaluate this value in the eval\_pick() method. At the st
 ### FeatureProperties
 FeatureProperties is essentially a struct that holds arbitrary values as key/value pairs. Those key/value pairs are used by the QML GUI to show the detail window. The keys are shown on the detail window in bold above the values. Furthermore the FeatureProperties struct also holds a title value which is shown at the top of the detail window.
 
-![](file:///media/Data/Studium/Master/Projects/AlpineMapsOrg/docu/documentation/Labels/markdown/meta/images/picker.svg)
+![](file:///home/madam/Documentos/alpinemaps/renderer/doc/Labels/markdown/meta/images/picker.svg)
 ### Visualizing with Qt GUI
 In order to visualize the transmitted FeatureProperties on the Qt GUI, we are first catching the pick\_evaluated signal in the TerrainRendererItem in the change\_feature() slot. This method checks if the properties changed and caches them. Additionally the list of key/value pairs is also transformed into a QList\<QString\> object (with alternating key and values as elements of this list) which is designated as a Q\_PROPERTY so that it can be used in the QML files. Initially we tried to transmit the whole key/value pairs to the QML, but unfortunately, in order to get this to work in QML a lot of groundwork had to be done. Since it wasn't too important that the key/values could be addressed independently in the QML this improvement was not implemented due to time and unneeded complexity reasons.
 After everything has been prepared in the change\_feature() method the feature\_changed signal is emitted by the method which triggers the update in the QML file.

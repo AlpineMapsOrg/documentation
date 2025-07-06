@@ -5,7 +5,6 @@ The main source material of this documentation is stored in the markdown folder.
 Following obsidian plugins were used to generate the pdf and the html:
 
 - Easy Bake (v1.1.0)
-- Webpage HTML Export (v1.8.01)
 - Better Export PDF (v1.9.2)
 
 ## Header UML Generation
